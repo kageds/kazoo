@@ -89,6 +89,7 @@
 -export_type([sleeper/0, cron/0, execargs/0, status/0, schedule/0]).
 
 -include_lib("kazoo_stdlib/include/kz_types.hrl").
+-include_lib("kazoo_stdlib/include/kz_log.hrl").
 
 -define(SERVER, ?MODULE).
 
@@ -325,8 +326,7 @@ apply_task(Exec) ->
                 apply(F, A)
         end
     catch
-        Error:Reason ->
-            Stacktrace = erlang:get_stacktrace(),
+        ?STACKTRACE(Error, Reason, Stacktrace)
             Format = "Task ~p in process ~p with value:~n~p",
             Message = lists:flatten(io_lib:format(
                                       Format,

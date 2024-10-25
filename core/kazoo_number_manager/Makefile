@@ -52,5 +52,5 @@ $(ITU_SRC): $(ITU_FILE)
 
 $(ITU): $(ITU_SRC)
 	@cat $(ITU_SRC) >$(ITU)
-	@python -c 'from __future__ import print_function; import json; [print("to_itu(<<\"", l["cca2"], "\">>) -> <<\"+", l["callingCode"][0], "\">>;", sep="") for l in sorted(json.load(open("dialcodes.json")), key=lambda l: l["cca2"]) if len(l["callingCode"]) > 0]' >>$(ITU)
+	@python3 -c 'from __future__ import print_function; import json; [print("to_itu(<<\"", l["cca2"], "\">>) -> <<\"+", l["callingCode"][0], "\">>;", sep="") for l in sorted(json.load(open("dialcodes.json")), key=lambda l: l["cca2"]) if len(l["callingCode"]) > 0]' >>$(ITU)
 	@echo 'to_itu(_) -> <<>>.' >>$(ITU)

@@ -35,7 +35,8 @@ c_src/kz_auth_rsa_drv.o: CFLAGS += -I$(ERTS_INCLUDE_DIR) -I$(ERL_INTERFACE_INCLU
 c_src/kz_auth_rsa_drv.o: c_src/kz_auth_rsa_drv.c
 	$(CC) $(CFLAGS) c_src/kz_auth_rsa_drv.c -o c_src/kz_auth_rsa_drv.o
 
-priv/kz_auth_rsa_drv.so: LDFLAGS += -lcrypto -L$(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
+## priv/kz_auth_rsa_drv.so: LDFLAGS += -lcrypto -L$(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
+priv/kz_auth_rsa_drv.so: LDFLAGS += -lcrypto -L$(ERL_INTERFACE_LIB_DIR) -lei
 priv/kz_auth_rsa_drv.so: c_src/kz_auth_rsa_drv.o
 	$(CC) c_src/kz_auth_rsa_drv.o $(LDFLAGS) -o priv/kz_auth_rsa_drv.so
 

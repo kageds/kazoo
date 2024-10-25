@@ -67,10 +67,12 @@ dep_eflame = git https://github.com/slfritchie/eflame 7b0bb1a7e8c8482a59421a3a50
 dep_eiconv = git https://github.com/zotonic/eiconv
 dep_escalus = git https://github.com/esl/escalus 0de0463c345a1ade6fccfb9aadad719b58a1cef5
 dep_exml = git https://github.com/paulgray/exml 2.2.1
-dep_jiffy = git https://github.com/lazedo/jiffy utf8  ## utf8 decode
+dep_jiffy = git https://github.com/2600hz/erlang-jiffy 2600hz
+#dep_jiffy = git https://github.com/lazedo/jiffy utf8  ## utf8 decode
 dep_meck = git https://github.com/eproxus/meck
 dep_nklib = git https://github.com/NetComposer/nklib v0.4.1
-dep_plists = hex 1.0.0
+dep_plists = git https://github.com/2600hz/erlang-plists 1.0.0
+#dep_plists = hex 1.0.0
 
 dep_erlcloud = git https://github.com/erlcloud/erlcloud 3.2.4
 
@@ -88,7 +90,7 @@ dep_couchbeam = git https://github.com/2600hz/erlang-couchbeam 28fce6c340de83f47
 dep_jesse = git https://github.com/2600hz/jesse 1.5-rc13
 ##dep_jesse = git https://github.com/for-GET/jesse 1.5.0-rc2
 
-dep_lager = git https://github.com/erlang-lager/lager 3.5.2
+dep_lager = git https://github.com/erlang-lager/lager 3.9.2
 dep_trie = git https://github.com/okeuday/trie v1.5.4
 dep_fs_event = git https://github.com/jamhed/fs_event 783400da08c2b55c295dbec81df0d926960c0346
 dep_fs_sync = git https://github.com/jamhed/fs_sync 2cf85cf5861221128f020c453604d509fd37cd53

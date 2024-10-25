@@ -28,7 +28,8 @@ c_src/comp128.o: c_src/comp128.c
 c_src/comp128.o:
 	$(CC) $(CFLAGS) c_src/comp128.c -o c_src/comp128.o
 
-priv/comp128.so: LDFLAGS += -L$(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
+## priv/comp128.so: LDFLAGS += -L$(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
+priv/comp128.so: LDFLAGS += -L$(ERL_INTERFACE_LIB_DIR) -lei
 priv/comp128.so: c_src/comp128.o
 	$(CC) c_src/comp128.o $(LDFLAGS) -o priv/comp128.so
 
